@@ -18,6 +18,21 @@ export class FunctionAnalyzer {
           end: node.body.getEnd(),
         });
       }
+
+      if (ts.isClassDeclaration(node)) {
+        topLevelRanges.push({
+          pos: node.getStart(),
+          end: node.getEnd(),
+        });
+      }
+
+      if (ts.isArrowFunction(node) && node.body) {
+        topLevelRanges.push({
+          pos: node.getStart(),
+          end: node.getEnd(),
+        });
+      }
+
       ts.forEachChild(node, visit);
     };
 
