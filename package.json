@@ -2,7 +2,9 @@
   "name": "collapsit",
   "displayName": "Collapsit",
   "description": "Collapse functions",
-  "version": "0.0.1",
+  "version": "0.0.3",
+  "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
+  "repository": {"url": "git@github.com:ahmdsabbir/collapsit.git"},
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -12,6 +14,18 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "keybindings": [
+      {
+        "command": "extension.collapseTopLevelFunctions",
+        "title": "collapsit : c : top-level",
+        "key": "ctrl+alt+n"
+      },
+      {
+        "command": "extension.uncollapseTopLevelFunctions",
+        "title": "collapsit: u : top-level",
+        "key": "ctrl+alt+m"
+      }
+    ],
     "commands": [
       {
         "command": "extension.collapseTopLevelFunctions",
