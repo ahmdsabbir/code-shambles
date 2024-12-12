@@ -4,7 +4,9 @@
   "description": "Collapse functions",
   "version": "0.0.3",
   "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
-  "repository": {"url": "git@github.com:ahmdsabbir/collapsit.git"},
+  "repository": {
+    "url": "git@github.com:ahmdsabbir/collapsit.git"
+  },
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -45,15 +47,17 @@
     "lint": "eslint src",
     "test": "vscode-test"
   },
+  "dependencies": {
+    "typescript": "^5.7.2"
+  },
   "devDependencies": {
     "@types/vscode": "^1.95.0",
+    "@vscode/test-electron": "^2.4.1",
     "@types/mocha": "^10.0.9",
     "@types/node": "20.x",
     "@typescript-eslint/eslint-plugin": "^8.10.0",
     "@typescript-eslint/parser": "^8.7.0",
-    "eslint": "^9.13.0",
-    "typescript": "^5.6.3",
     "@vscode/test-cli": "^0.0.10",
-    "@vscode/test-electron": "^2.4.1"
+    "eslint": "^9.13.0"
   }
 }
