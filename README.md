@@ -25,8 +25,11 @@ None... yet. But patience is a virtue, and settings are on the horizon.
 What issues? It's flawless.
 
 ## Release Notes
+### 0.0.4
+- Fixed an issue where it was collapsing the class itself, not the methods of the class
+
 ### 0.0.3
-- Beta version unleashed into the wild (but not published!).
+- Alpha version unleashed (but not published!).
 
 ### 0.0.2
 - Now supports **anonymous functions** in TypeScript.
