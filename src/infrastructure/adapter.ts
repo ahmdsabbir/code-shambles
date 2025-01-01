@@ -1,11 +1,11 @@
 import * as vscode from "vscode";
-import { FunctionAnalyzer } from "../domain/typescript/functionAnalyzer";
+import { RangeAnalyzer } from "../domain/typescript/rangeAnalyzer";
 
 export class VSCodeEditorAdapter {
-  private functionAnalyzer: FunctionAnalyzer;
+  private rangeAnalyzer: RangeAnalyzer;
   
   constructor() {
-    this.functionAnalyzer = new FunctionAnalyzer();
+    this.rangeAnalyzer = new RangeAnalyzer();
   }
 
   collapseOrUncollapseFunctions(collapse: boolean) {
@@ -17,7 +17,7 @@ export class VSCodeEditorAdapter {
 
     const document = editor.document;
     const text = document.getText();
-    const ranges = this.functionAnalyzer.getTopLevelFunctionRanges(text);
+    const ranges = this.rangeAnalyzer.getTopLevelRanges(text);
 
     const command = collapse ? "editor.fold" : "editor.unfold";
 

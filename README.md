@@ -25,6 +25,11 @@ None... yet. But patience is a virtue, and settings are on the horizon.
 What issues? It's flawless.
 
 ## Release Notes
+### 0.0.5
+- code refactoring (tried to make it more modular)
+- fixed an issue where during collapse all the functions and methods of a class kept being visited multiple times
+- fixed an issue where, in the case of classes collapsing, the class itself collapses first, then it uncollapses with collapsed class methods
+- added comments to improve readability
 ### 0.0.4
 - Fixed an issue where it was collapsing the class itself, not the methods of the class
 

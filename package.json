@@ -2,7 +2,7 @@
   "name": "collapsit",
   "displayName": "Collapsit",
   "description": "Collapse functions",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
   "repository": {
     "url": "git@github.com:ahmdsabbir/collapsit.git"
