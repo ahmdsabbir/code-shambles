@@ -14,14 +14,18 @@ Say goodbye to scrolling endlessly through a never-ending code scroll! ✨
 Access the commands via `Ctrl+Shift+P` or use the keyboard shortcuts below.  
 
 ### **Commands**  
-- 🌀 **Collapse All Top-Level Functions**: `collapse: c: top-level`  
-- 🌀 **Un-collapse All Top-Level Functions**: `collapse: u: top-level`  
+- 🌀 **Collapse All Top-Level Functions**: `collapsit:Funcs:C`  
+- 🌀 **Un-collapse All Top-Level Functions**: `collapsit:Funcs:U`
+- 🌀 **Un-collapse All Import Statements**: `collapsit:Imports:C`
+- 🌀 **Un-collapse All Import Statements**: `collapsit:Imports:U`  
 
 ---
 
 ### **Keybindings**  
-- **Collapse All**: `Ctrl+Alt+N`  
-- **Un-Collapse All**: `Ctrl+Alt+M`  
+- **Collapse All Top-Level Functions**: `Ctrl+Alt+N`  
+- **Un-Collapse All Top-Level Functions**: `Ctrl+Alt+M`
+- **Un-Collapse All Import Statements**: `Ctrl+Alt+C`
+- **Un-Collapse All Import Statements**: `Ctrl+Alt+V`
 
 ---
 
@@ -41,6 +45,9 @@ What issues? **It’s flawless.**
 --- 
 
 ## 📝 **Release Notes**  
+
+### **v0.0.7**  
+- 🧑‍💻 Now it can collapse and un-collapse import statements at the top of the file. 
 
 ### **v0.0.6**  
 - 🛠️ Fixed an issue where arrow functions in the last class method didn’t collapse properly.  

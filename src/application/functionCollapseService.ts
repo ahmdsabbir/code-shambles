@@ -1,17 +1,25 @@
 import { VSCodeEditorAdapter } from "../infrastructure/adapter";
 
 export class FunctionCollapseService {
-    private editorAdapter: VSCodeEditorAdapter;
+  private editorAdapter: VSCodeEditorAdapter;
 
-    constructor() {
-        this.editorAdapter = new VSCodeEditorAdapter();
-    }
+  constructor() {
+    this.editorAdapter = new VSCodeEditorAdapter();
+  }
 
-    executeCollapse() {
-        this.editorAdapter.collapseOrUncollapseFunctions(true);
-    }
+  collapseTopLevelFuncs() {
+    this.editorAdapter.toggleCollapseFunctions(true);
+  }
 
-    executeUncollapse() {
-        this.editorAdapter.collapseOrUncollapseFunctions(false);
-    }
+  unCollapseTopLevelFuncs() {
+    this.editorAdapter.toggleCollapseFunctions(false);
+  }
+
+  collapseImportStatements() {
+    this.editorAdapter.toggleCollapseImports(true);
+  }
+
+  unCollapseImportStatements() {
+    this.editorAdapter.toggleCollapseImports(false);
+  }
 }

@@ -2,7 +2,7 @@
   "name": "collapsit",
   "displayName": "Collapsit",
   "description": "Collapse functions",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
   "repository": {
     "url": "git@github.com:ahmdsabbir/collapsit.git"
@@ -19,23 +19,41 @@
     "keybindings": [
       {
         "command": "extension.collapseTopLevelFunctions",
-        "title": "collapsit : c : top-level",
+        "title": "collapsit:Funcs:C",
         "key": "ctrl+alt+n"
       },
       {
-        "command": "extension.uncollapseTopLevelFunctions",
-        "title": "collapsit: u : top-level",
+        "command": "extension.unCollapseTopLevelFunctions",
+        "title": "collapsit:Funcs:U",
         "key": "ctrl+alt+m"
+      },
+      {
+        "command": "extension.collapseImport",
+        "title": "collapsit:Imports:C",
+        "key": "ctrl+alt+c"
+      },
+      {
+        "command": "extension.unCollapseImport",
+        "title": "collapsit:Imports:U",
+        "key": "ctrl+alt+v"
       }
     ],
     "commands": [
       {
         "command": "extension.collapseTopLevelFunctions",
-        "title": "collapsit : c : top-level"
+        "title": "collapsit:Funcs:C"
       },
       {
-        "command": "extension.uncollapseTopLevelFunctions",
-        "title": "collapsit: u : top-level"
+        "command": "extension.unCollapseTopLevelFunctions",
+        "title": "collapsit:Funcs:U"
+      },
+      {
+        "command": "extension.collapseImport",
+        "title": "collapsit:Imports:C"
+      },
+      {
+        "command": "extension.unCollapseImport",
+        "title": "collapsit:Imports:U"
       }
     ]
   },

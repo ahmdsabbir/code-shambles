@@ -1,7 +1,7 @@
 import * as vscode from "vscode";
 import { RangeAnalyzer } from "../domain/typescript/rangeAnalyzer";
 
-type command = "editor.fold" | "editor.unfold"
+type Command = "editor.fold" | "editor.unfold";
 interface TextRange {
   pos: number;
   end: number;
@@ -9,49 +9,89 @@ interface TextRange {
 
 export class VSCodeEditorAdapter {
   private rangeAnalyzer: RangeAnalyzer;
+  private editor: vscode.TextEditor;
+  private document: vscode.TextDocument;
 
   constructor() {
     this.rangeAnalyzer = new RangeAnalyzer();
-  }
 
-  collapseOrUncollapseFunctions(collapse: boolean) {
     const editor = vscode.window.activeTextEditor;
-
     if (!editor) {
-      return; // If no active editor is open, exit early.
+      throw new Error("No active editor found. Please open a file in VS Code.");
     }
 
-    const document = editor.document;
-    const text = document.getText();
-
-    // Retrieve the ranges of top-level functions from the analyzer.
-    const ranges = this.rangeAnalyzer.getTopLevelRanges(text);
-
-    // Determine the command to execute: fold or unfold.
-    const command: command = collapse ? "editor.fold" : "editor.unfold";
-
-    // Save the original cursor position to restore later.
-    const originalPosition = editor.selection.active;
-
-    // Iterate through each function range and apply the fold/unfold command.
-    for (let i = 0; i < ranges.length; i++) {
-      this.execCommand(command, ranges[i], document);
-    }
-
-    // Reset the cursor to its original position to avoid unwanted selection.
-    editor.selection = new vscode.Selection(originalPosition, originalPosition);
+    this.editor = editor;
+    this.document = editor.document;
+    this.rangeAnalyzer.setSourceFile(this.document.getText());
   }
 
-  private execCommand(command: command, range: TextRange, document: vscode.TextDocument) {
-    const start = document.positionAt(range.pos);
-    const end = document.positionAt(range.end);
+  /**
+   * Toggles the collapse state (fold/unfold) of top-level functions in the file.
+   * @param collapse - Whether to collapse (true) or expand (false) functions.
+   */
+  public toggleCollapseFunctions(collapse: boolean): void {
+    const ranges = this.rangeAnalyzer.getTopLevelRanges();
+    const command: Command = collapse ? "editor.fold" : "editor.unfold";
+    this.applyCommandToRanges(command, ranges);
+  }
 
-    // Create a VS Code range object for the current function.
-    const vscodeRange = new vscode.Range(start, end);
+  /**
+   * Toggles the collapse state (fold/unfold) of import statements in the file.
+   * @param collapse - Whether to collapse (true) or expand (false) imports.
+   */
+  public toggleCollapseImports(collapse: boolean): void {
+    const importRange = this.rangeAnalyzer.getImportRange();
+    if (!importRange) {
+      console.warn("No import ranges detected.");
+      return;
+    }
+    const command: Command = collapse ? "editor.fold" : "editor.unfold";
+    this.applyCommandToRange(command, importRange);
+  }
 
-    // Execute the fold/unfold command for the specific range.
+  /**
+   * Applies a given command to multiple text ranges.
+   * @param command - The command to execute (fold/unfold).
+   * @param ranges - The ranges to which the command should be applied.
+   */
+  private applyCommandToRanges(command: Command, ranges: TextRange[]): void {
+    const originalPosition = this.editor.selection.active;
+
+    for (const range of ranges) {
+      this.applyCommandToRange(command, range);
+    }
+
+    this.restoreCursorPosition(originalPosition);
+  }
+
+  /**
+   * Applies a given command to a single text range.
+   * @param command - The command to execute (fold/unfold).
+   * @param range - The range to which the command should be applied.
+   */
+  private applyCommandToRange(command: Command, range: TextRange): void {
+    const vscodeRange = this.createVSCodeRange(range);
     vscode.commands.executeCommand(command, {
       selectionLines: [vscodeRange.start.line],
     });
+  }
+
+  /**
+   * Restores the cursor position in the editor to avoid unwanted selection.
+   * @param position - The original cursor position to restore.
+   */
+  private restoreCursorPosition(position: vscode.Position): void {
+    this.editor.selection = new vscode.Selection(position, position);
+  }
+
+  /**
+   * Converts a custom `TextRange` to a VS Code `Range`.
+   * @param range - The `TextRange` to convert.
+   * @returns A `vscode.Range` object.
+   */
+  private createVSCodeRange(range: TextRange): vscode.Range {
+    const start = this.document.positionAt(range.pos);
+    const end = this.document.positionAt(range.end);
+    return new vscode.Range(start, end);
   }
 }
