@@ -1,17 +1,19 @@
 {
-  "name": "collapsit",
-  "displayName": "Collapsit",
-  "description": "Collapse functions",
-  "version": "0.0.7",
+  "name": "code-shambles",
+  "displayName": "Code Shambles",
+  "description": "Operate on your code like a true pirate surgeon",
+  "icon": "assets/icon.png",
+  "version": "1.0.0",
+  "publisher": "AhmdSabbir",
   "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
   "repository": {
-    "url": "git@github.com:ahmdsabbir/collapsit.git"
+    "url": "git@github.com:ahmdsabbir/code-shambles.git"
   },
   "engines": {
     "vscode": "^1.95.0"
   },
   "categories": [
-    "Other"
+    "Debuggers"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -19,41 +21,41 @@
     "keybindings": [
       {
         "command": "extension.collapseTopLevelFunctions",
-        "title": "collapsit:Funcs:C",
+        "title": "cs:collapse:functions",
         "key": "ctrl+alt+n"
       },
       {
         "command": "extension.unCollapseTopLevelFunctions",
-        "title": "collapsit:Funcs:U",
+        "title": "cs:uncollapse:functions",
         "key": "ctrl+alt+m"
       },
       {
         "command": "extension.collapseImport",
-        "title": "collapsit:Imports:C",
+        "title": "cs:collapse:imports",
         "key": "ctrl+alt+c"
       },
       {
         "command": "extension.unCollapseImport",
-        "title": "collapsit:Imports:U",
+        "title": "cs:uncollapse:imports",
         "key": "ctrl+alt+v"
       }
     ],
     "commands": [
       {
         "command": "extension.collapseTopLevelFunctions",
-        "title": "collapsit:Funcs:C"
+        "title": "cs:collapse:functions"
       },
       {
         "command": "extension.unCollapseTopLevelFunctions",
-        "title": "collapsit:Funcs:U"
+        "title": "cs:uncollapse:functions"
       },
       {
         "command": "extension.collapseImport",
-        "title": "collapsit:Imports:C"
+        "title": "cs:collapse:imports"
       },
       {
         "command": "extension.unCollapseImport",
-        "title": "collapsit:Imports:U"
+        "title": "cs:collapse:imports"
       }
     ]
   },

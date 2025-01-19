@@ -1,5 +1,7 @@
-# Collapsit: Master the Art of Collapsing (and Un-Collapsing)
-Ever felt like your code file looks like a messy open suitcase, with functions spilling out everywhere? Fear no more! **Collapsit** is here to clean up your code jungle by folding all your top-level functions and class methods into neat little origami cranes. 🚀
+# Code Shambles: Operate on your code like a true pirate surgeon!
+Ever felt like your code file looks like Luffy's backpack—messy, chaotic, and with functions spilling out like a nakama party gone wild? Fear no more! Code Shambles is here to bring Trafalgar Law-level order to your coding chaos, folding all your functions and class methods into neat little origami cranes. 🗺️⚓ Sail smoothly through your code jungle! 🚀
+
+And Yes, it is a One Piece reference. We all like Tra-guy!
 
 ## ✨ Features
 - **📜 Collapse All Functions:** Turn your spaghetti code into a clean sheet.
@@ -14,23 +16,24 @@ Say goodbye to scrolling endlessly through a never-ending code scroll! ✨
 Access the commands via `Ctrl+Shift+P` or use the keyboard shortcuts below.  
 
 ### **Commands**  
-- 🌀 **Collapse All Top-Level Functions**: `collapsit:Funcs:C`  
-- 🌀 **Un-collapse All Top-Level Functions**: `collapsit:Funcs:U`
-- 🌀 **Un-collapse All Import Statements**: `collapsit:Imports:C`
-- 🌀 **Un-collapse All Import Statements**: `collapsit:Imports:U`  
+- 🌀 **Collapse All Top-Level Functions**: `cs:collapse:functions`  
+- 🌀 **Un-collapse All Top-Level Functions**: `cs:uncollapse:functions`
+- 🌀 **Un-collapse All Import Statements**: `cs:collapse:imports`
+- 🌀 **Un-collapse All Import Statements**: `cs:uncollapse:imports`  
 
 ---
 
 ### **Keybindings**  
-- **Collapse All Top-Level Functions**: `Ctrl+Alt+N`  
-- **Un-Collapse All Top-Level Functions**: `Ctrl+Alt+M`
-- **Un-Collapse All Import Statements**: `Ctrl+Alt+C`
-- **Un-Collapse All Import Statements**: `Ctrl+Alt+V`
+- 🌀 **Collapse All Top-Level Functions**: `Ctrl+Alt+N`  
+- 🌀 **Un-Collapse All Top-Level Functions**: `Ctrl+Alt+M`
+- 🌀 **Un-Collapse All Import Statements**: `Ctrl+Alt+C`
+- 🌀 **Un-Collapse All Import Statements**: `Ctrl+Alt+V`
 
 ---
 
 ## 🌐 **Compatibility**  
-Currently works with **TypeScript only**. If you’re using another language... well, maybe it’s time to embrace the TypeScript life. 😉  
+Currently works with **TypeScript and Javascript**.
+If you’re using another language... well, maybe it’s time to reconsider your life choices! 😉  
 
 ---
 
@@ -45,6 +48,9 @@ What issues? **It’s flawless.**
 --- 
 
 ## 📝 **Release Notes**  
+
+### **v1.0.0**  
+- ⛵ Official release!
 
 ### **v0.0.7**  
 - 🧑‍💻 Now it can collapse and un-collapse import statements at the top of the file. 
