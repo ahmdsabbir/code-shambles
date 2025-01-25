@@ -1,7 +1,12 @@
+# Dowload the official VS Code Plugin
+[**Official Download Link**](https://marketplace.visualstudio.com/items?itemName=AhmdSabbir.code-shambles) |  
+
 # Code Shambles: Operate on your code like a true pirate surgeon!
 Ever felt like your code file looks like Luffy's backpack—messy, chaotic, and with functions spilling out like a nakama party gone wild? Fear no more! Code Shambles is here to bring Trafalgar Law-level order to your coding chaos, folding all your functions and class methods into neat little origami cranes. 🗺️⚓ Sail smoothly through your code jungle! 🚀
 
 And Yes, it is a One Piece reference. We all like Tra-guy!
+
+
 
 ## ✨ Features
 - **📜 Collapse All Functions:** Turn your spaghetti code into a clean sheet.
