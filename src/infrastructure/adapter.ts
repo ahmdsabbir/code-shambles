@@ -81,6 +81,22 @@ export class VSCodeEditorAdapter {
    * @param position - The original cursor position to restore.
    */
   private restoreCursorPosition(position: vscode.Position): void {
+    // Get the ranges for collapsible elements
+    const ranges = this.rangeAnalyzer.getTopLevelRanges();
+  
+    // Check if the cursor is within any range
+    for (const range of ranges) {
+      const start = this.document.positionAt(range.pos);
+      const end = this.document.positionAt(range.end);
+  
+      if (position.isAfterOrEqual(start) && position.isBeforeOrEqual(end)) {
+        // If within range, move the cursor to the end of the range
+        this.editor.selection = new vscode.Selection(end, end);
+        return;
+      }
+    }
+  
+    // If not within any range, restore the original position
     this.editor.selection = new vscode.Selection(position, position);
   }
 

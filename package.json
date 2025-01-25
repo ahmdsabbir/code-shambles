@@ -3,7 +3,7 @@
   "displayName": "Code Shambles",
   "description": "Operate on your code like a true pirate surgeon",
   "icon": "assets/icon.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "AhmdSabbir",
   "author": "Sabbir Ahmed <ahmd.sabbir@gmail.com>",
   "repository": {
@@ -55,7 +55,7 @@
       },
       {
         "command": "extension.unCollapseImport",
-        "title": "cs:collapse:imports"
+        "title": "cs:uncollapse:imports"
       }
     ]
   },

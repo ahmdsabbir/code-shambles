@@ -49,6 +49,10 @@ What issues? **It’s flawless.**
 
 ## 📝 **Release Notes**  
 
+### **v1.0.1**  
+- 🛠️ Fixed a typo in the command (previously both collapsing and uncollapsing of import statements were `cs:collapse:imports`)  
+- 🛠️ Fixed an issue where a class method would not collapse, if the cursor is in that class method.
+
 ### **v1.0.0**  
 - ⛵ Official release!
 

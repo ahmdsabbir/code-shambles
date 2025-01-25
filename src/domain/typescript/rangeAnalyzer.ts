@@ -74,7 +74,7 @@ export class RangeAnalyzer {
 
   public getImportRange(): ts.TextRange {
     if (!this.sourceFile) {
-      throw new Error('Source File not set');
+      throw new Error("Source File not set");
     }
 
     return new ImportRanges().setNode(this.sourceFile).getRanges();
